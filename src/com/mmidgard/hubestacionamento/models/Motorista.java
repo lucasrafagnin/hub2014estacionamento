@@ -12,6 +12,11 @@ public class Motorista implements Serializable {
 	private Collection<Recarga> recargas;
 	private double creditos;
 	private boolean status;
+	
+	public Motorista(models.Motorista motorista) {
+		this.nome = motorista.nome;
+		this.creditos = motorista.creditos;
+	}
 
 	public long getId() {
 		return id;

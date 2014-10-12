@@ -10,6 +10,11 @@ public class Estacionamento implements Serializable {
 	private Timestamp horaInicio;
 	private Timestamp horaFinal;
 	private double valor;
+	
+	public Estacionamento(models.Estacionamento estacionamento){
+		this.horaInicio = estacionamento.hora_inicio;
+		this.horaFinal = estacionamento.hora_final;
+	}
 
 	public long getId() {
 		return id;
