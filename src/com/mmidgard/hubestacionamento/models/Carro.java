@@ -19,6 +19,11 @@ public class Carro implements Serializable {
 		this.status = status;
 	}
 
+	public Carro(models.Carro carro) {
+		this.nome = carro.descricao;
+		this.placa = carro.placa;
+	}
+
 	public long getId() {
 		return id;
 	}
