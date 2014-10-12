@@ -1,6 +1,9 @@
 package com.mmidgard.hubestacionamento;
 
+import internet.ServiceError;
+import internet.WSClient;
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,10 +35,26 @@ public class Perfil extends Activity {
 				senha = (EditText)findViewById(R.id.perfil_senha);
 				confirmar = (EditText)findViewById(R.id.perfil_confirmar);
 
-				if (senha.equals(confirmar)) {
-					
-				} else {
+				if ((nome.getText().toString().equals("")) || usuario.getText().toString().equals("")) {
+					Toast.makeText(Perfil.this, "Os campos são obrigatórios", Toast.LENGTH_SHORT).show();
+				} else if (!senha.getText().toString().equals(confirmar.getText().toString())) {
 					Toast.makeText(Perfil.this, "Senha e confirmar não conferem", Toast.LENGTH_SHORT).show();
+				} else {
+					new AsyncTask<Void, Void, Void>() {
+						@Override
+						protected Void doInBackground(Void... params) {
+							try {
+								WSClient.criarPerfil(usuario.getText().toString(), senha.getText().toString(), nome.getText().toString());
+							} catch (ServiceError e) {
+								e.printStackTrace();
+							}
+							return null;
+						}
+
+						protected void onPostExecute(Void result) {
+							Toast.makeText(Perfil.this, "Perfil criado com sucesso!", Toast.LENGTH_SHORT).show();
+						};
+					}.execute();
 				}
 			}
 		});

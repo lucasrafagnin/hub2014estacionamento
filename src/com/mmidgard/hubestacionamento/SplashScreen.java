@@ -18,7 +18,7 @@ public class SplashScreen extends Activity {
 
 			@Override
 			public void run() {
-				startActivity(new Intent(SplashScreen.this, Login.class));
+				startActivity(new Intent(SplashScreen.this, Perfil.class));
 				finish();
 				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 			}

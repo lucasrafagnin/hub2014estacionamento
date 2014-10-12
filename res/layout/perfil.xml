@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00aeef"
     android:gravity="center"
-    android:orientation="vertical"
-    android:background="#00aeef" >
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#fff"
         android:orientation="vertical"
-        android:background="#fff" 
-        android:padding="10dp">
-        
+        android:padding="10dp" >
+
         <LinearLayout
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -27,7 +27,8 @@
                 android:id="@+id/perfil_nome"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="Nome" />
+                android:text="Nome"
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -44,7 +45,8 @@
                 android:id="@+id/perfil_usuario"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="Usuário" />
+                android:text="Usuario"
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -60,8 +62,9 @@
             <EditText
                 android:id="@+id/perfil_senha"
                 android:layout_width="250dp"
+                android:text="Senha"
                 android:layout_height="wrap_content"
-                android:hint="Senha" />
+                android:inputType="textPassword" />
         </LinearLayout>
 
         <LinearLayout
@@ -78,7 +81,8 @@
                 android:id="@+id/perfil_confirmar"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="Confirmar" />
+                android:text="Senha"
+                android:inputType="textPassword" />
         </LinearLayout>
 
         <Button
