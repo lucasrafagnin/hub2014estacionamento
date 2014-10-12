@@ -1,11 +1,14 @@
 package com.mmidgard.hubestacionamento;
 
+import internet.WSClient;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -28,6 +31,8 @@ public class Inicial extends GlobalActivity implements OnItemClickListener {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.inicial);
+
+		WSClient.setAuth("Basic " + Base64.encodeToString(("mmidgard@outlook.com:finadoalbano").getBytes(), Base64.NO_WRAP));
 
 		header();
 
