@@ -2,16 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-     >
+    android:orientation="vertical" >
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingTop="10dp"
-        android:text="Saldo atual: R$40,10"
-        android:textSize="22sp" />
+        android:orientation="horizontal"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo atual: R$"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/saldo_atual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -27,7 +38,9 @@
             android:textSize="22sp" />
 
         <EditText
+            android:id="@+id/novo_saldo"
             android:layout_width="100dp"
+            android:inputType="number"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -45,7 +58,8 @@
 
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="lucasrafagnin" />
     </LinearLayout>
 
     <LinearLayout
@@ -63,10 +77,12 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="password" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/efetuar_pagamento"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

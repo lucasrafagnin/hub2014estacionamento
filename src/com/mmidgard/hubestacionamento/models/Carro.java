@@ -1,22 +1,33 @@
 package com.mmidgard.hubestacionamento.models;
 
 import java.io.Serializable;
-import java.util.Collection;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable(tableName = "carro")
 public class Carro implements Serializable {
 
 	private static final long serialVersionUID = 4149085837268143831L;
 
+	@DatabaseField(id = true)
 	private long id;
+	@DatabaseField
 	private String placa;
+	@DatabaseField
 	private String nome;
+	@DatabaseField(canBeNull = true)
 	private boolean status;
-	private Collection<Estacionamento> estacionamentos;
 
-	public Carro(String placa, String nome, boolean status) {
+	// private Collection<Estacionamento> estacionamentos;
+
+	public Carro() {
+	}
+
+	public Carro(long id, String placa, String nome) {
+		this.id = id;
 		this.placa = placa;
 		this.nome = nome;
-		this.status = status;
 	}
 
 	public Carro(models.Carro carro) {
@@ -56,12 +67,13 @@ public class Carro implements Serializable {
 		this.nome = nome;
 	}
 
-	public Collection<Estacionamento> getEstacionamentos() {
-		return estacionamentos;
-	}
-
-	public void setEstacionamentos(Collection<Estacionamento> estacionamentos) {
-		this.estacionamentos = estacionamentos;
-	}
+	// public Collection<Estacionamento> getEstacionamentos() {
+	// return estacionamentos;
+	// }
+	//
+	// public void setEstacionamentos(Collection<Estacionamento>
+	// estacionamentos) {
+	// this.estacionamentos = estacionamentos;
+	// }
 
 }

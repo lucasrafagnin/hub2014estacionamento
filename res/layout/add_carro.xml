@@ -6,17 +6,21 @@
     android:orientation="vertical" >
 
     <EditText
+        android:id="@+id/carro_nome"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Nome" />
 
     <EditText
+        android:id="@+id/carro_placa"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:inputType="textCapCharacters"
+        android:maxLength="7"
         android:hint="Placa" />
 
     <Button
-        android:id="@+id/adicionar_carro"
+        android:id="@+id/carro_adicionar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

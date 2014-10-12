@@ -1,19 +1,30 @@
 package com.mmidgard.hubestacionamento.models;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable(tableName = "estacionamento")
 public class Estacionamento implements Serializable {
 
 	private static final long serialVersionUID = -2402310079770322100L;
+	@DatabaseField(id = true)
 	private long id;
-	private Timestamp horaInicio;
-	private Timestamp horaFinal;
+	@DatabaseField
+	private String horaInicio;
+	@DatabaseField
+	private String horaFinal;
+	@DatabaseField
 	private double valor;
 	
-	public Estacionamento(models.Estacionamento estacionamento){
-		this.horaInicio = estacionamento.hora_inicio;
-		this.horaFinal = estacionamento.hora_final;
+	public Estacionamento()
+	{
+	}
+
+	public Estacionamento(models.Estacionamento estacionamento) {
+		this.horaInicio = estacionamento.data_inicio;
+		this.horaFinal = estacionamento.data_final;
 	}
 
 	public long getId() {
@@ -24,19 +35,19 @@ public class Estacionamento implements Serializable {
 		this.id = id;
 	}
 
-	public Timestamp getHoraInicio() {
+	public String getHoraInicio() {
 		return horaInicio;
 	}
 
-	public void setHoraInicio(Timestamp horaInicio) {
+	public void setHoraInicio(String horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public Timestamp getHoraFinal() {
+	public String getHoraFinal() {
 		return horaFinal;
 	}
 
-	public void setHoraFinal(Timestamp horaFinal) {
+	public void setHoraFinal(String horaFinal) {
 		this.horaFinal = horaFinal;
 	}
 

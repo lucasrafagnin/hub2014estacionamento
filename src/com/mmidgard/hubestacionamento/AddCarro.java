@@ -27,20 +27,7 @@ public class AddCarro extends Activity implements OnItemClickListener {
 		setContentView(R.layout.add_carro);
 
 		listaCarros = new ArrayList<Carro>();
-		criarCarrosTeste();
 		criarLista(listaCarros);
-	}
-
-	private void criarCarrosTeste() {
-		Carro c = new Carro("abc-1234", "gol branco", true);
-		Carro c2 = new Carro("abc-1234", "gol branco", true);
-		Carro c3 = new Carro("abc-1234", "gol branco", true);
-		Carro c4 = new Carro("abc-1234", "gol branco", true);
-
-		listaCarros.add(c);
-		listaCarros.add(c2);
-		listaCarros.add(c3);
-		listaCarros.add(c4);
 	}
 
 	private void criarLista(List<Carro> elementList) {
